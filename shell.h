@@ -78,19 +78,20 @@ typedef struct passinfo
 	char *arg;
 	char **argv;
 	char *path;
-	char *argc;
+	int  *argc;
 	unsigned int line_count;
-	int error;
+	int err_num;
 	int linecount_flag;
 	char fname;
 	list_t *env;
-	list_t *histor;
+	list_t *history;
 	list_t *alias;
 	char **environ;
 	int env_changed;
 	int status;
-	char *cmd_buf;
-	int cmd_buf_type;
+
+	char **cmd_buf;/* pointer to cmd ; chain buffer, for memory mangement */
+	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
 } info_t;
