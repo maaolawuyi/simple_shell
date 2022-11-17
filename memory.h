@@ -1,14 +1,12 @@
-#ifndef MEMORY_H
-#define MEMORY_H
+#ifndef MAIN_H
+#define MAIN_H
 
+#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include "general.h"
 
+/* Entry point of the shell */
+void start(general_t *info);
 
-/* memory.c */
-void *_realloc(void *ptr, size_t old_size, size_t new_size);
-
-/* free.c */
-void free_memory_p(void *ptr);
-void free_memory_pp(void **ptr);
-
-#endif /* MEMORY_H */
+#endif
